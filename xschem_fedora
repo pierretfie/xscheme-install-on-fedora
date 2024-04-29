@@ -1,0 +1,15 @@
+#XSCHEM INSTALLER
+#Enable RPM Fusion Repository: Xschem is available in the RPM Fusion repository for Fedora. 
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm 
+https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+#install required libraries
+sudo dnf install libX11 libXrender libxcb cairo tk flex libxpm4 libjpeg-turbo \
+#install xschem
+sudo dnf install xschem
+
+# while ngspice is used for circuit simulation and analysis. They often work together, with Xschem 
+#generating netlists that ngspice then uses to simulate the behavior of the designed circuits.
+#install ngspice
+sudo dnf install ngspice
+#run xschem on terminal to start xscheme GUI 
+xschem
