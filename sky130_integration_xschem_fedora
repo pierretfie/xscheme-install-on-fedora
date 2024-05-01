@@ -1,0 +1,37 @@
+
+#installing skywater-pdk files from
+
+#you have to git clone 
+git clone https://github.com/google/skywater-pdk.git
+cd skywater-pdk/
+git submodule init libraries/sky130_fd_io/latest
+git submodule init libraries/sky130_fd_pr/latest
+git submodule init libraries/sky130_fd_sc_hd/latest
+git submodule init libraries/sky130_fd_sc_hvl/latest
+git submodule init libraries/sky130_fd_sc_hdll/latest
+git submodule init libraries/sky130_fd_sc_hs/latest
+git submodule init libraries/sky130_fd_sc_ms/latest
+git submodule init libraries/sky130_fd_sc_ls/latest
+git submodule init libraries/sky130_fd_sc_lp/latest
+git submodule update
+make timing
+
+#installing magic
+git clone https://github.com/RTimothyEdwards/magic.git
+cd magic
+./configure
+make
+sudo make install
+export MAGIC_HOME=/usr/local/lib/magic
+export PATH=$PATH:$MAGIC_HOME/bin
+source ~/.bashrc
+#confirm installation
+magic --version
+
+#installing open-pdks
+ git clone https://github.com/RTimothyEdwards/open_pdks
+./configure --enable-sky130-pdk --enable-sram-sky130
+make
+sudo make install
+make veryclean
+
