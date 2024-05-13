@@ -1,6 +1,6 @@
 
 #installing skywater-pdk files from
-
+#http://web02.gonzaga.edu/faculty/talarico/vlsi/openpdk.html
 #you have to git clone 
 git clone https://github.com/google/skywater-pdk.git
 cd skywater-pdk/
