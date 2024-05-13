@@ -21,7 +21,8 @@ magic --version
 
 #installing open-pdks
  git clone https://github.com/RTimothyEdwards/open_pdks
-./configure --enable-sky130-pdk --enable-sram-sky130
+./configure --enable-sky130-pdk=/home/<unixusername>/skywater-pdk \
+--with-sky130-variants=all --prefix=/home/<unixusername>
 make
 sudo make install
 make veryclean
